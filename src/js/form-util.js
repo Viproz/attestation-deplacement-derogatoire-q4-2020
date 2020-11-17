@@ -198,7 +198,7 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     updateSecureLS(formInputs)
     const pdfBlob = await generatePdf(getProfile(formInputs), reasons, pdfBase)
 
-    const creationInstant = releaseDateInput.value
+    const creationInstant = new Date($('#field-datesortie').value + "T" + $('#field-heuresortie').value + ":00")
     const creationDate = creationInstant.toLocaleDateString('fr-CA')
     const creationHour = creationInstant
       .toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
